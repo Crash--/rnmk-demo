@@ -19,6 +19,7 @@ const {
   MKSwitch,
   MKRadioButton,
   MKColor,
+  MKCheckbox,
   getTheme,
   setTheme,
 } = MK;
@@ -65,6 +66,7 @@ class Toggles extends Component {
   constructor() {
     super();
     this.radioGroup = new MKRadioButton.Group();
+    this.checkboxGroup = new MKCheckbox.Group();
   }
 
   _onChecked(event) {
@@ -129,6 +131,16 @@ class Toggles extends Component {
             <Text style={styles.legendLabel}>Second</Text>
           </View>
         </View>
+        <View styte={styles.row}>
+          <View style={styles.col}>
+            <MKCheckbox group={this.checkboxGroup} />
+            <Text style={styles.legendLabel}>First</Text> 
+          </View>
+          <View style={styles.col}>
+            <MKCheckbox group={this.checkboxGroup} />
+            <Text style={styles.legendLabel}>Second</Text>
+          </View>
+          </View>
       </ScrollView>
     );
   }
